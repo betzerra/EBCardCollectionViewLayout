@@ -14,6 +14,8 @@
 		6777D04319DA0B1100DCE962 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6777D04219DA0B1100DCE962 /* Images.xcassets */; };
 		6777D04619DA0B1100DCE962 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6777D04419DA0B1100DCE962 /* LaunchScreen.xib */; };
 		6777D05219DA0B1100DCE962 /* EBCardCollectionViewLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D05119DA0B1100DCE962 /* EBCardCollectionViewLayoutTests.m */; };
+		6777D05D19DA0B9500DCE962 /* EBCardCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D05C19DA0B9500DCE962 /* EBCardCollectionViewLayout.m */; };
+		6777D06019DA2A8300DCE962 /* EBCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D05F19DA2A8300DCE962 /* EBCardCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		6777D04B19DA0B1100DCE962 /* EBCardCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBCardCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777D05019DA0B1100DCE962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6777D05119DA0B1100DCE962 /* EBCardCollectionViewLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBCardCollectionViewLayoutTests.m; sourceTree = "<group>"; };
+		6777D05B19DA0B9500DCE962 /* EBCardCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCardCollectionViewLayout.h; sourceTree = "<group>"; };
+		6777D05C19DA0B9500DCE962 /* EBCardCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCardCollectionViewLayout.m; sourceTree = "<group>"; };
+		6777D05E19DA2A8300DCE962 /* EBCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBCardCollectionViewCell.h; sourceTree = "<group>"; };
+		6777D05F19DA2A8300DCE962 /* EBCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBCardCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				6777D03A19DA0B1100DCE962 /* AppDelegate.m */,
 				6777D03C19DA0B1100DCE962 /* ViewController.h */,
 				6777D03D19DA0B1100DCE962 /* ViewController.m */,
+				6777D05E19DA2A8300DCE962 /* EBCardCollectionViewCell.h */,
+				6777D05F19DA2A8300DCE962 /* EBCardCollectionViewCell.m */,
+				6777D05B19DA0B9500DCE962 /* EBCardCollectionViewLayout.h */,
+				6777D05C19DA0B9500DCE962 /* EBCardCollectionViewLayout.m */,
 				6777D03F19DA0B1100DCE962 /* Main.storyboard */,
 				6777D04219DA0B1100DCE962 /* Images.xcassets */,
 				6777D04419DA0B1100DCE962 /* LaunchScreen.xib */,
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6777D03E19DA0B1100DCE962 /* ViewController.m in Sources */,
+				6777D05D19DA0B9500DCE962 /* EBCardCollectionViewLayout.m in Sources */,
+				6777D06019DA2A8300DCE962 /* EBCardCollectionViewCell.m in Sources */,
 				6777D03B19DA0B1100DCE962 /* AppDelegate.m in Sources */,
 				6777D03819DA0B1100DCE962 /* main.m in Sources */,
 			);
@@ -344,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EBCardCollectionViewLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EBCardCollectionViewLayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +426,7 @@
 				6777D05719DA0B1100DCE962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6777D05819DA0B1100DCE962 /* Build configuration list for PBXNativeTarget "EBCardCollectionViewLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +435,7 @@
 				6777D05A19DA0B1100DCE962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
