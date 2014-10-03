@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>06BB7E8A-B659-4CCB-8D27-4E97C30CDC52</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EBCardCollectionViewLayout</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AE5A0AED1EB818A2D70DB4C887F6FB49C3B242DE</key>
+		<string>github.com:betzerra/EBCardCollectionViewLayout.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EBCardCollectionViewLayout.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AE5A0AED1EB818A2D70DB4C887F6FB49C3B242DE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:betzerra/EBCardCollectionViewLayout.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AE5A0AED1EB818A2D70DB4C887F6FB49C3B242DE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AE5A0AED1EB818A2D70DB4C887F6FB49C3B242DE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EBCardCollectionViewLayout</string>
+		</dict>
+	</array>
+</dict>
+</plist>

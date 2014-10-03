@@ -23,11 +23,20 @@ static NSString * const CellKind = @"CardCell";
 
 }
 
+- (NSInteger)cardWidth {
+    NSInteger retVal = self.collectionView.bounds.size.width - _offset.horizontal * 2;
+    return retVal;
+}
+
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath{
-    CGRect retVal = CGRectMake(indexPath.row * self.collectionView.bounds.size.width + _offset.horizontal,
+    NSInteger posX = _offset.horizontal / 2 + ([self cardWidth] + _offset.horizontal / 2) * indexPath.row;
+    
+    CGRect retVal = CGRectMake(posX,
                                _offset.vertical,
-                               self.collectionView.bounds.size.width - _offset.horizontal * 2,
+                               [self cardWidth],
                                self.collectionView.bounds.size.height - _offset.vertical * 2);
+
+    
     return retVal;
 }
 
@@ -89,14 +98,15 @@ static NSString * const CellKind = @"CardCell";
     return allAttributes;
 }
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewLayoutAttributes *retVal = self.layoutInfo[indexPath];
+- (CGSize)collectionViewContentSize {
+    CGSize retVal = CGSizeMake(([self cardWidth] + _offset.horizontal/2) * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal/2,
+                               self.collectionView.bounds.size.height);
     return retVal;
 }
 
-- (CGSize)collectionViewContentSize{
-    CGSize retVal = CGSizeMake(self.collectionView.bounds.size.width * [self.collectionView numberOfItemsInSection:0],
-                               self.collectionView.bounds.size.height);
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+    NSInteger indexPath = proposedContentOffset.x / ([self cardWidth] + _offset.horizontal/2);
+    CGPoint retVal = CGPointMake(indexPath * ([self cardWidth] + (_offset.horizontal/2)) - _offset.horizontal/2, 0);
     return retVal;
 }
 @end

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIOffset anOffset = UIOffsetMake(0, 10);
+    UIOffset anOffset = UIOffsetMake(40, 10);
     [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
 }
 
