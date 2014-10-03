@@ -105,9 +105,22 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
-    CGPoint retVal = CGPointZero;
-    NSInteger indexPath = proposedContentOffset.x / ([self cardWidth] + _offset.horizontal/2);
-    retVal = CGPointMake(MAX(indexPath * ([self cardWidth] + (_offset.horizontal/2)) - _offset.horizontal/2, 0), 0);
-    return retVal;
+    CGFloat rawPageValue = self.collectionView.contentOffset.x / ([self cardWidth] + _offset.horizontal/2);
+    CGFloat currentPage = (velocity.x > 0.0) ? floor(rawPageValue) : ceil(rawPageValue);
+    CGFloat nextPage = (velocity.x > 0.0) ? ceil(rawPageValue) : floor(rawPageValue);
+    
+    BOOL pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
+    BOOL flicked = fabs(velocity.x) > [self flickVelocity];
+    if (pannedLessThanAPage && flicked) {
+        proposedContentOffset.x = nextPage * ([self cardWidth] + _offset.horizontal / 2) - _offset.horizontal/2;
+    } else {
+        proposedContentOffset.x = round(rawPageValue) * ([self cardWidth] + _offset.horizontal/2) - _offset.horizontal/2;
+    }
+    
+    return proposedContentOffset;
+}
+
+- (CGFloat)flickVelocity {
+    return 0.3;
 }
 @end
