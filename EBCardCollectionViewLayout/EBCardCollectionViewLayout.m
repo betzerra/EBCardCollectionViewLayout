@@ -105,8 +105,9 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+    CGPoint retVal = CGPointZero;
     NSInteger indexPath = proposedContentOffset.x / ([self cardWidth] + _offset.horizontal/2);
-    CGPoint retVal = CGPointMake(indexPath * ([self cardWidth] + (_offset.horizontal/2)) - _offset.horizontal/2, 0);
+    retVal = CGPointMake(MAX(indexPath * ([self cardWidth] + (_offset.horizontal/2)) - _offset.horizontal/2, 0), 0);
     return retVal;
 }
 @end
