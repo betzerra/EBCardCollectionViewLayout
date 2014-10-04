@@ -9,7 +9,6 @@
 #import "EBCardCollectionViewLayout.h"
 
 @interface EBCardCollectionViewLayout()
-- (void)setup;
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)cardWidth;
 - (CGFloat)pageWidth;
@@ -20,10 +19,6 @@
 #pragma mark - Private
 
 static NSString * const CellKind = @"CardCell";
-
-- (void)setup{
-
-}
 
 - (NSInteger)cardWidth {
     NSInteger retVal = self.collectionView.bounds.size.width - _offset.horizontal * 2;
@@ -48,18 +43,6 @@ static NSString * const CellKind = @"CardCell";
 }
 
 #pragma mark - Public
-
-- (id)init{
-    self = [super init];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (void)awakeFromNib{
-    [self setup];
-}
 
 - (void)prepareLayout{
     NSMutableDictionary *newLayoutInfo = [NSMutableDictionary dictionary];
