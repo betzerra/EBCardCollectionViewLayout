@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Ezequiel Becerra" => "ezequiel.becerra@gmail.com" }
-  s.source           = { :git => "https://github.com/betzerra/EBCardCollectionViewLayout.git", :tag => 0.1.0 }
+  s.source           = { :git => "https://github.com/betzerra/EBCardCollectionViewLayout.git", :tag => "0.1.0" }
   s.social_media_url = 'https://twitter.com/betzerra'
 
   s.platform     = :ios, '7.0'
