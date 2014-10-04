@@ -11,6 +11,8 @@
 @interface EBCardCollectionViewLayout()
 - (void)setup;
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
+- (NSInteger)cardWidth;
+- (CGFloat)pageWidth;
 @end
 
 @implementation EBCardCollectionViewLayout
@@ -28,8 +30,13 @@ static NSString * const CellKind = @"CardCell";
     return retVal;
 }
 
+- (CGFloat)pageWidth {
+    CGFloat retVal = [self cardWidth] + _offset.horizontal/2;
+    return retVal;
+}
+
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger posX = _offset.horizontal / 2 + ([self cardWidth] + _offset.horizontal / 2) * indexPath.row;
+    NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
     
     CGRect retVal = CGRectMake(posX,
                                _offset.vertical,
@@ -99,22 +106,34 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGSize)collectionViewContentSize {
-    CGSize retVal = CGSizeMake(([self cardWidth] + _offset.horizontal/2) * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal/2,
+    CGSize retVal = CGSizeMake([self pageWidth] * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal/2,
                                self.collectionView.bounds.size.height);
     return retVal;
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
-    CGFloat rawPageValue = self.collectionView.contentOffset.x / ([self cardWidth] + _offset.horizontal/2);
-    CGFloat currentPage = (velocity.x > 0.0) ? floor(rawPageValue) : ceil(rawPageValue);
-    CGFloat nextPage = (velocity.x > 0.0) ? ceil(rawPageValue) : floor(rawPageValue);
+    CGFloat rawPageValue = self.collectionView.contentOffset.x / [self pageWidth];
+
+    CGFloat currentPage = 0;
+    if (velocity.x > 0.0) {
+        currentPage = floor(rawPageValue);
+    } else {
+        currentPage = ceil(rawPageValue);
+    }
+    
+    CGFloat nextPage = 0;
+    if (velocity.x > 0.0) {
+        nextPage = ceil(rawPageValue);
+    } else {
+        nextPage = floor(rawPageValue);
+    }
     
     BOOL pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
     BOOL flicked = fabs(velocity.x) > [self flickVelocity];
     if (pannedLessThanAPage && flicked) {
-        proposedContentOffset.x = nextPage * ([self cardWidth] + _offset.horizontal / 2) - _offset.horizontal/2;
+        proposedContentOffset.x = nextPage * [self pageWidth] - _offset.horizontal/2;
     } else {
-        proposedContentOffset.x = round(rawPageValue) * ([self cardWidth] + _offset.horizontal/2) - _offset.horizontal/2;
+        proposedContentOffset.x = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
     }
     
     return proposedContentOffset;
