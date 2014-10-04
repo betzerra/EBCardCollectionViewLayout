@@ -1,6 +1,6 @@
 # EBCardCollectionViewLayout
 Have you ever tried to implement a simple UI showing element as cards?
-You ended up implementing a `UIScrollView`, didn't you? Well, you should have used a UICollectionView with a custom `UICollectionViewLayout` instead. 
+You ended up implementing a `UIScrollView`, didn't you? Well, you should have used a `UICollectionView` with a custom `UICollectionViewLayout` instead. 
 
 Here's that custom class you need :-)
 
