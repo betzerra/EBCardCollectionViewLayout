@@ -15,29 +15,25 @@
 
 @implementation ViewController
 
+#pragma mark - Public
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //  The bigger the offset, the more you see on previous / next cards.
     UIOffset anOffset = UIOffsetMake(40, 10);
     [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - UICollectionViewDataSource
 
-- (void)viewDidLayoutSubviews{
-    [super viewDidLayoutSubviews];
-}
-
-#pragma mark - 
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 10;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     UICollectionViewCell *retVal = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell"
                                                                               forIndexPath:indexPath];    
     return retVal;

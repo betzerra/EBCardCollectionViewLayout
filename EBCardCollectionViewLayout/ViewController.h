@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>{
-    
+@interface ViewController : UIViewController <UICollectionViewDataSource>{
     __weak IBOutlet UICollectionView *_collectionView;
 }
-
 @end
-

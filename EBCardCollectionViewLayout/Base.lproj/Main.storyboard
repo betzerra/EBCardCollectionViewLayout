@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPK-l2-cIx">
-                                <rect key="frame" x="0.0" y="20" width="320" height="528"/>
-                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPK-l2-cIx">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="g0M-HF-kik" customClass="EBCardCollectionViewLayout"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="3jH-uk-JEm" customClass="EBCardCollectionViewCell">
@@ -37,7 +37,6 @@
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="qpa-Kg-KZj"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="58W-KY-eFw"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -45,7 +44,7 @@
                         <constraints>
                             <constraint firstItem="ZPK-l2-cIx" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="5HD-EE-WzD"/>
                             <constraint firstAttribute="trailing" secondItem="ZPK-l2-cIx" secondAttribute="trailing" id="blq-i7-y6F"/>
-                            <constraint firstAttribute="bottom" secondItem="ZPK-l2-cIx" secondAttribute="bottom" constant="20" id="d5B-tn-MjS"/>
+                            <constraint firstAttribute="bottom" secondItem="ZPK-l2-cIx" secondAttribute="bottom" id="d5B-tn-MjS"/>
                             <constraint firstAttribute="trailing" secondItem="ZPK-l2-cIx" secondAttribute="trailing" id="fDs-vo-COT">
                                 <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                             </constraint>
