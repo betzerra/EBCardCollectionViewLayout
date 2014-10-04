@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UICollectionViewDataSource>{
+@interface DemoViewController : UIViewController <UICollectionViewDataSource>{
+    NSMutableArray *_people;
     __weak IBOutlet UICollectionView *_collectionView;
 }
 @end

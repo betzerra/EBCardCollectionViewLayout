@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DemoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -21,15 +21,82 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="g0M-HF-kik" customClass="EBCardCollectionViewLayout"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="3jH-uk-JEm" customClass="EBCardCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="3jH-uk-JEm" customClass="DemoCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="533"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loboscator.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TEb-fc-Pvz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="240" id="Gkk-kV-KKp"/>
+                                                        <constraint firstAttribute="height" constant="240" id="RjP-1b-hnT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCL-tI-cMc">
+                                                    <rect key="frame" x="0.0" y="240" width="240" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leandro Lobosco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-vy-0KB">
+                                                            <rect key="frame" x="52" y="10" width="135" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="42E-aa-1xM"/>
+                                                        <constraint firstAttribute="centerX" secondItem="Q1O-vy-0KB" secondAttribute="centerX" id="g92-uq-YFV"/>
+                                                        <constraint firstAttribute="centerY" secondItem="Q1O-vy-0KB" secondAttribute="centerY" id="nsU-Aa-1LZ"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@loboscator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pO-xX-Obn">
+                                                    <rect key="frame" x="73" y="290" width="95.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsY-5s-8ey">
+                                                    <rect key="frame" x="12" y="320" width="215" height="1"/>
+                                                    <color key="backgroundColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Vy7-87-dtF"/>
+                                                        <constraint firstAttribute="width" constant="215" id="yg2-bD-WJy"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1q-Ia-tYC">
+                                                    <rect key="frame" x="15" y="341" width="210" height="89.5"/>
+                                                    <string key="text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget posuere sem. Nulla sed est vehicula, ultrices sem non turpis duis."</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="6pO-xX-Obn" firstAttribute="top" secondItem="JCL-tI-cMc" secondAttribute="bottom" constant="10" id="3PV-tQ-9Hn"/>
+                                            <constraint firstAttribute="centerX" secondItem="qsY-5s-8ey" secondAttribute="centerX" id="Bj7-BB-DRc"/>
+                                            <constraint firstItem="JCL-tI-cMc" firstAttribute="leading" secondItem="3jH-uk-JEm" secondAttribute="leading" id="Eny-ag-rrp"/>
+                                            <constraint firstItem="TEb-fc-Pvz" firstAttribute="top" secondItem="3jH-uk-JEm" secondAttribute="top" id="L5C-tR-saN"/>
+                                            <constraint firstItem="A1q-Ia-tYC" firstAttribute="top" secondItem="qsY-5s-8ey" secondAttribute="bottom" constant="20" id="R8i-aY-7Nh"/>
+                                            <constraint firstItem="qsY-5s-8ey" firstAttribute="top" secondItem="6pO-xX-Obn" secondAttribute="bottom" constant="10" id="S1T-t9-jKD"/>
+                                            <constraint firstAttribute="trailing" secondItem="JCL-tI-cMc" secondAttribute="trailing" id="SgO-SY-8VO"/>
+                                            <constraint firstItem="A1q-Ia-tYC" firstAttribute="leading" secondItem="3jH-uk-JEm" secondAttribute="leading" constant="15" id="aa2-nd-JnV"/>
+                                            <constraint firstAttribute="centerX" secondItem="TEb-fc-Pvz" secondAttribute="centerX" id="eri-zd-ki1"/>
+                                            <constraint firstAttribute="trailing" secondItem="A1q-Ia-tYC" secondAttribute="trailing" constant="15" id="o5G-su-gsq"/>
+                                            <constraint firstAttribute="centerX" secondItem="6pO-xX-Obn" secondAttribute="centerX" id="xf0-Ac-UaT"/>
+                                            <constraint firstItem="JCL-tI-cMc" firstAttribute="top" secondItem="TEb-fc-Pvz" secondAttribute="bottom" id="ywO-Wj-8zD"/>
+                                        </constraints>
+                                        <size key="customSize" width="240" height="533"/>
+                                        <connections>
+                                            <outlet property="_personImageView" destination="TEb-fc-Pvz" id="hbF-dL-QXH"/>
+                                            <outlet property="_personNameLabel" destination="Q1O-vy-0KB" id="f23-AH-1M7"/>
+                                            <outlet property="_personTwitterLabel" destination="6pO-xX-Obn" id="nhw-km-csg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -68,6 +135,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="284" y="360.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loboscator.jpg" width="320" height="320"/>
+    </resources>
 </document>
