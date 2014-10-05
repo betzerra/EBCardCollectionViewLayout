@@ -101,6 +101,9 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+    
+    CGPoint retVal = proposedContentOffset;
+    
     CGFloat rawPageValue = self.collectionView.contentOffset.x / [self pageWidth];
 
     CGFloat currentPage = 0;
@@ -120,12 +123,16 @@ static NSString * const CellKind = @"CardCell";
     BOOL pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
     BOOL flicked = fabs(velocity.x) > [self flickVelocity];
     if (pannedLessThanAPage && flicked) {
-        proposedContentOffset.x = nextPage * [self pageWidth] - _offset.horizontal/2;
+        //  Change UICollectionViewCell
+        retVal.x = nextPage * [self pageWidth] - _offset.horizontal/2;
     } else {
-        proposedContentOffset.x = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
+        //  Bounces
+        CGFloat posX = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
+        posX = MAX(0, posX);
+        retVal.x = posX;
     }
     
-    return proposedContentOffset;
+    return retVal;
 }
 
 - (CGFloat)flickVelocity {
