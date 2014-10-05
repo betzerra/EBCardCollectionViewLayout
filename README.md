@@ -1,6 +1,8 @@
 # EBCardCollectionViewLayout
 Have you ever tried to implement a simple UI showing element as cards?
-You ended up implementing a UIScrollView, didn't you? Well, you should have used UICollectionViews using a custom UICollectionViewLayout.
+You ended up implementing a `UIScrollView`, didn't you? Well, you should have used a `UICollectionView` with a custom `UICollectionViewLayout` instead. 
+
+Here's that custom class you need :-)
 
 ![Demo](https://github.com/betzerra/EBCardCollectionViewLayout/blob/master/cards.gif)
 
@@ -15,3 +17,5 @@ pod 'EBCardCollectionViewLayout', :git => 'https://github.com/betzerra/EBCardCol
 
 ##License
 This project is under MIT License. See LICENSE file for more information.
+
+Except photos for the demo project which are part of *#portraitwithtongue* by [Adrimontaldovera](http://instagram.com/adrimontaldovera) Those are not under MIT License.
