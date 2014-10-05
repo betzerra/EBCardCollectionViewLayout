@@ -31,7 +31,13 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath{
+    
     NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
+    
+    if ([self.collectionView numberOfItemsInSection:0] == 1) {
+        //  If there's just an only item. Center it.
+        posX = _offset.horizontal + [self pageWidth] * indexPath.row;
+    }
     
     CGRect retVal = CGRectMake(posX,
                                _offset.vertical,
