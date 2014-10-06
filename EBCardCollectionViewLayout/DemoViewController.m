@@ -30,7 +30,8 @@
                             @{@"name" : @"Joaquin Casarini", @"twitter" : @"jcasarini", @"avatarFilename" : @"jcasarini.jpg"},
                             @{@"name" : @"Gastón Oliva", @"twitter" : @"gastonoliva", @"avatarFilename" : @"gastonoliva.jpg"},
                             @{@"name" : @"Anita Baggiano", @"twitter" : @"anitabagg", @"avatarFilename" : @"anitabagg.jpg"},
-                            @{@"name" : @"Ezequiel", @"twitter" : @"betzerra", @"avatarFilename" : @"betzerra.jpg"},];
+                            @{@"name" : @"Ezequiel", @"twitter" : @"betzerra", @"avatarFilename" : @"betzerra.jpg"}
+                            ];
     _people = [[NSMutableArray alloc] init];
     
     for (NSDictionary *personDict in peopleData) {
@@ -65,4 +66,29 @@
     return retVal;
 }
 
+- (IBAction)addFirstButtonPressed:(id)sender {
+    //  Create data object
+    NSDictionary *newPersonDict = @{@"name" : @"Ezequiel", @"twitter" : @"betzerra", @"avatarFilename" : @"betzerra.jpg"};
+    Person *newPerson = [[Person alloc] initWithDictionary:newPersonDict];
+    
+    //  Insert it on datasource
+    [_people insertObject:newPerson atIndex:0];
+
+    //  Add it on UICollectionView
+    NSIndexPath* newIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    [_collectionView insertItemsAtIndexPaths:@[newIndexPath]];
+}
+
+- (IBAction)addLastButtonPressed:(id)sender {
+    //  Create data object
+    NSDictionary *newPersonDict = @{@"name" : @"Ezequiel", @"twitter" : @"betzerra", @"avatarFilename" : @"betzerra.jpg"};
+    Person *newPerson = [[Person alloc] initWithDictionary:newPersonDict];
+    
+    //  Insert it on datasource
+    [_people addObject:newPerson];
+    
+    //  Add it on UICollectionView
+    NSIndexPath* newIndexPath = [NSIndexPath indexPathForItem:[_people count]-1 inSection:0];
+    [_collectionView insertItemsAtIndexPaths:@[newIndexPath]];
+}
 @end

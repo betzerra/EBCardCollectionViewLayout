@@ -12,4 +12,7 @@
     NSMutableArray *_people;
     __weak IBOutlet UICollectionView *_collectionView;
 }
+
+- (IBAction)addFirstButtonPressed:(id)sender;
+- (IBAction)addLastButtonPressed:(id)sender;
 @end

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPK-l2-cIx">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="g0M-HF-kik" customClass="EBCardCollectionViewLayout"/>
                                 <cells>
@@ -106,19 +106,43 @@
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="qpa-Kg-KZj"/>
                                 </connections>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3r-Gu-sMG">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZPM-AR-t8R"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Add First" id="EZb-ZK-pJw">
+                                        <connections>
+                                            <action selector="addFirstButtonPressed:" destination="vXZ-lx-hvc" id="DWF-Dh-ZtX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pO7-lD-WfU"/>
+                                    <barButtonItem title="Add Last" id="Guu-MG-IYd">
+                                        <connections>
+                                            <action selector="addLastButtonPressed:" destination="vXZ-lx-hvc" id="j7s-34-8HH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZPK-l2-cIx" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="5HD-EE-WzD"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b3r-Gu-sMG" secondAttribute="bottom" id="EIz-0I-o5v"/>
+                            <constraint firstItem="b3r-Gu-sMG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RZb-iO-bsf"/>
                             <constraint firstAttribute="trailing" secondItem="ZPK-l2-cIx" secondAttribute="trailing" id="blq-i7-y6F"/>
-                            <constraint firstAttribute="bottom" secondItem="ZPK-l2-cIx" secondAttribute="bottom" id="d5B-tn-MjS"/>
+                            <constraint firstAttribute="bottom" secondItem="ZPK-l2-cIx" secondAttribute="bottom" constant="40" id="d5B-tn-MjS"/>
                             <constraint firstAttribute="trailing" secondItem="ZPK-l2-cIx" secondAttribute="trailing" id="fDs-vo-COT">
                                 <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="ZPK-l2-cIx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="qv4-aq-6QD"/>
+                            <constraint firstItem="b3r-Gu-sMG" firstAttribute="top" secondItem="ZPK-l2-cIx" secondAttribute="bottom" id="wfU-vL-n6X"/>
+                            <constraint firstAttribute="trailing" secondItem="b3r-Gu-sMG" secondAttribute="trailing" id="zpc-WS-MPk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="d5B-tn-MjS"/>
                                 <exclude reference="fDs-vo-COT"/>
                             </mask>
                         </variation>
@@ -135,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="360.5"/>
+            <point key="canvasLocation" x="284" y="360"/>
         </scene>
     </scenes>
     <resources>

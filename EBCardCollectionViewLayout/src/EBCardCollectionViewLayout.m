@@ -9,6 +9,7 @@
 #import "EBCardCollectionViewLayout.h"
 
 @interface EBCardCollectionViewLayout()
+- (NSString *)keyForIndexPath:(NSIndexPath *)indexPath;
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)cardWidth;
 - (CGFloat)pageWidth;
@@ -30,7 +31,12 @@ static NSString * const CellKind = @"CardCell";
     return retVal;
 }
 
-- (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath{
+- (NSString *)keyForIndexPath:(NSIndexPath *)indexPath {
+    NSString *retVal = [NSString stringWithFormat:@"%d-%d", indexPath.section, indexPath.row];
+    return retVal;
+}
+
+- (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath {
     
     NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
     
@@ -67,12 +73,19 @@ static NSString * const CellKind = @"CardCell";
             [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
             itemAttributes.frame = [self frameForCardAtIndexPath:indexPath];
             
-            cellLayoutInfo[indexPath] = itemAttributes;
+            NSString *key = [self keyForIndexPath:indexPath];
+            cellLayoutInfo[key] = itemAttributes;
         }
     }
     
     newLayoutInfo[@"CellKind"] = cellLayoutInfo;
     self.layoutInfo = newLayoutInfo;
+}
+
+-(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *key = [self keyForIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *retVal = self.layoutInfo[@"CellKind"][key];
+    return retVal;
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
@@ -95,7 +108,7 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGSize)collectionViewContentSize {
-    CGSize retVal = CGSizeMake([self pageWidth] * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal/2,
+    CGSize retVal = CGSizeMake([self pageWidth] * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal,
                                self.collectionView.bounds.size.height);
     return retVal;
 }
@@ -123,8 +136,14 @@ static NSString * const CellKind = @"CardCell";
     BOOL pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
     BOOL flicked = fabs(velocity.x) > [self flickVelocity];
     if (pannedLessThanAPage && flicked) {
+        
         //  Change UICollectionViewCell
-        retVal.x = nextPage * [self pageWidth] - _offset.horizontal/2;
+        retVal.x = nextPage * [self pageWidth];
+        
+        if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
+            retVal.x = retVal.x - _offset.horizontal/2;
+        }
+        
     } else {
         //  Bounces
         CGFloat posX = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
