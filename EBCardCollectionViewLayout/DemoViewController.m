@@ -58,4 +58,11 @@
     return retVal;
 }
 
+- (BOOL)shouldAutorotate {
+    [_collectionView.collectionViewLayout invalidateLayout];
+    
+    BOOL retVal = YES;
+    return retVal;
+}
+
 @end
