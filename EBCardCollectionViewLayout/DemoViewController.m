@@ -91,4 +91,17 @@
     NSIndexPath* newIndexPath = [NSIndexPath indexPathForItem:[_people count]-1 inSection:0];
     [_collectionView insertItemsAtIndexPaths:@[newIndexPath]];
 }
+
+- (IBAction)removeFirstButtonPressed:(id)sender {
+    [_people removeObjectAtIndex:0];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    [_collectionView deleteItemsAtIndexPaths:@[newIndexPath]];
+}
+
+- (IBAction)removeLastButtonPressed:(id)sender {
+    NSInteger indexToRemove = [_people count]-1;
+    [_people removeObjectAtIndex:indexToRemove];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:indexToRemove inSection:0];
+    [_collectionView deleteItemsAtIndexPaths:@[newIndexPath]];
+}
 @end

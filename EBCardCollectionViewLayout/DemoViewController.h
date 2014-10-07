@@ -15,4 +15,6 @@
 
 - (IBAction)addFirstButtonPressed:(id)sender;
 - (IBAction)addLastButtonPressed:(id)sender;
+- (IBAction)removeFirstButtonPressed:(id)sender;
+- (IBAction)removeLastButtonPressed:(id)sender;
 @end

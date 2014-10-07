@@ -123,6 +123,18 @@
                                             <action selector="addLastButtonPressed:" destination="vXZ-lx-hvc" id="j7s-34-8HH"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="f5E-tZ-kkh"/>
+                                    <barButtonItem title="Remove First" id="Cnd-CL-8fz">
+                                        <connections>
+                                            <action selector="removeFirstButtonPressed:" destination="vXZ-lx-hvc" id="lPO-FA-3XA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vkc-i2-QG1"/>
+                                    <barButtonItem title="Remove Last" id="ars-Af-v6J">
+                                        <connections>
+                                            <action selector="removeLastButtonPressed:" destination="vXZ-lx-hvc" id="QBh-fB-eYA"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
