@@ -13,6 +13,7 @@
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)cardWidth;
 - (CGFloat)pageWidth;
+- (void)setup;
 @end
 
 @implementation EBCardCollectionViewLayout
@@ -20,6 +21,10 @@
 #pragma mark - Private
 
 static NSString * const CellKind = @"CardCell";
+
+- (void)setup {
+    [self addObserver:self forKeyPath:@"collectionView.contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+}
 
 - (NSInteger)cardWidth {
     NSInteger retVal = self.collectionView.bounds.size.width - _offset.horizontal * 2;
@@ -55,6 +60,18 @@ static NSString * const CellKind = @"CardCell";
 }
 
 #pragma mark - Public
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
+    [self setup];
+}
 
 - (void)prepareLayout{
     NSMutableDictionary *newLayoutInfo = [NSMutableDictionary dictionary];
@@ -157,4 +174,27 @@ static NSString * const CellKind = @"CardCell";
 - (CGFloat)flickVelocity {
     return 0.3;
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    
+    if ([keyPath isEqualToString:@"collectionView.contentOffset"]) {
+        CGFloat floatPage = self.collectionView.contentOffset.x / [self pageWidth];
+        NSInteger newPage = round(floatPage);
+        if (_currentPage != newPage) {
+            _currentPage = newPage;
+        }
+    }
+}
+
+- (void)dealloc {
+    @try {
+        [self removeObserver:self forKeyPath:@"collectionView.contentOffset"];
+    } @catch (NSException * exception) {
+        
+    }
+}
+
 @end

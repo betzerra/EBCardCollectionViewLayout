@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface EBCardCollectionViewLayout : UICollectionViewLayout
+
+@property (readonly) NSInteger currentPage;
 @property (nonatomic, assign) UIOffset offset;
 @property (nonatomic, strong) NSDictionary *layoutInfo;
 @end
