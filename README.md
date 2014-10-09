@@ -15,6 +15,8 @@ You can use *CocoaPods*
 pod 'EBCardCollectionViewLayout', :git => 'https://github.com/betzerra/EBCardCollectionViewLayout'
 ```
 
+Also, be sure you have disabled _"Enable Pagination"_ on your `UICollectionView`. Otherwise, the pagination will behavior inaccurately. 
+
 ##License
 This project is under MIT License. See LICENSE file for more information.
 
