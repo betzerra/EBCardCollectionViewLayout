@@ -59,6 +59,13 @@ static NSString * const CellKind = @"CardCell";
     return retVal;
 }
 
+#pragma mark - Properties
+
+- (void)setOffset:(UIOffset)offset {
+    _offset = offset;
+    [self invalidateLayout];
+}
+
 #pragma mark - Public
 
 - (id)init {
