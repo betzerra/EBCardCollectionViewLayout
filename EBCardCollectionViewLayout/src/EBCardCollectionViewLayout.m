@@ -164,8 +164,11 @@ static NSString * const CellKind = @"CardCell";
         //  Change UICollectionViewCell
         retVal.x = nextPage * [self pageWidth];
         
-        if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
+        if (nextPage < [self.collectionView numberOfItemsInSection:0]) {
             retVal.x = retVal.x - _offset.horizontal/2;
+        }
+        if (nextPage <= 0){
+            retVal.x = 0;
         }
         
     } else {
