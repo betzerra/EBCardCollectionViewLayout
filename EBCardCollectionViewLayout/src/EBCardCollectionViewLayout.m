@@ -50,7 +50,7 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (NSString *)keyForIndexPath:(NSIndexPath *)indexPath {
-    NSString *retVal = [NSString stringWithFormat:@"%ld-%ld", indexPath.section, indexPath.row];
+    NSString *retVal = [NSString stringWithFormat:@"%ld-%ld", (long)indexPath.section, (long)indexPath.row];
     return retVal;
 }
 
