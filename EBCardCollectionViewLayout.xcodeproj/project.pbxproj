@@ -27,6 +27,7 @@
 		67BE544B19DFA34000AE1379 /* gastonoliva@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67BE544A19DFA34000AE1379 /* gastonoliva@2x.jpg */; };
 		67BE544D19DFA3C700AE1379 /* anitabagg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67BE544C19DFA3C700AE1379 /* anitabagg@2x.jpg */; };
 		67BE544F19DFA43A00AE1379 /* betzerra@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67BE544E19DFA43A00AE1379 /* betzerra@2x.jpg */; };
+		67DEA3C61AB646CF007A1FB3 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DEA3C51AB646CF007A1FB3 /* DemoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		67BE544A19DFA34000AE1379 /* gastonoliva@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gastonoliva@2x.jpg"; sourceTree = "<group>"; };
 		67BE544C19DFA3C700AE1379 /* anitabagg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "anitabagg@2x.jpg"; sourceTree = "<group>"; };
 		67BE544E19DFA43A00AE1379 /* betzerra@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "betzerra@2x.jpg"; sourceTree = "<group>"; };
+		67DEA3C41AB646CF007A1FB3 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
+		67DEA3C51AB646CF007A1FB3 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				6777D03A19DA0B1100DCE962 /* AppDelegate.m */,
 				67BE543819DF92D000AE1379 /* Assets */,
 				6777D05E19DA2A8300DCE962 /* DemoCollectionViewCell.h */,
+				67DEA3C41AB646CF007A1FB3 /* DemoTableViewController.h */,
+				67DEA3C51AB646CF007A1FB3 /* DemoTableViewController.m */,
 				6777D05F19DA2A8300DCE962 /* DemoCollectionViewCell.m */,
 				6777D03C19DA0B1100DCE962 /* DemoViewController.h */,
 				6777D03D19DA0B1100DCE962 /* DemoViewController.m */,
@@ -294,6 +299,7 @@
 				6777D03E19DA0B1100DCE962 /* DemoViewController.m in Sources */,
 				6777D06019DA2A8300DCE962 /* DemoCollectionViewCell.m in Sources */,
 				6777D03B19DA0B1100DCE962 /* AppDelegate.m in Sources */,
+				67DEA3C61AB646CF007A1FB3 /* DemoTableViewController.m in Sources */,
 				6777D03819DA0B1100DCE962 /* main.m in Sources */,
 				67BE543719DF90A100AE1379 /* EBCardCollectionViewLayout.m in Sources */,
 			);
