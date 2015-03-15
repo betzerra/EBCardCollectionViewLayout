@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EBCardCollectionViewLayout"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "A \"card style\" UICollectionViewLayout for iOS 7+"
   s.description      = <<-DESC
                        A \"card style\" UICollectionViewLayout for iOS 7+
