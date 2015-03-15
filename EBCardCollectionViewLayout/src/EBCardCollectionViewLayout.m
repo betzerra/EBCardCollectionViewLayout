@@ -11,7 +11,9 @@
 @interface EBCardCollectionViewLayout()
 - (NSString *)keyForIndexPath:(NSIndexPath *)indexPath;
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
+
 - (NSInteger)cardWidth;
+- (NSInteger)cardHeight;
 - (CGFloat)pageWidth;
 - (void)setup;
 @end
@@ -31,8 +33,18 @@ static NSString * const CellKind = @"CardCell";
     return retVal;
 }
 
+- (NSInteger)cardHeight {
+    NSInteger retVal = self.collectionView.bounds.size.height - _offset.vertical * 2;
+    return retVal;
+}
+
 - (CGFloat)pageWidth {
-    CGFloat retVal = [self cardWidth] + _offset.horizontal/2;
+    CGFloat retVal = [self cardWidth] + _offset.horizontal / 2;
+    return retVal;
+}
+
+- (CGFloat)pageHeight {
+    CGFloat retVal = [self cardHeight] + _offset.vertical / 2;
     return retVal;
 }
 
@@ -42,19 +54,27 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
-    
-    if ([self.collectionView numberOfItemsInSection:0] == 1) {
-        //  If there's just an only item. Center it.
-        posX = _offset.horizontal + [self pageWidth] * indexPath.row;
-    }
-    
-    CGRect retVal = CGRectMake(posX,
-                               _offset.vertical,
-                               [self cardWidth],
-                               self.collectionView.bounds.size.height - _offset.vertical * 2);
 
+    CGRect retVal = CGRectZero;
+    
+    if (_layoutType == EBCardCollectionLayoutHorizontal) {
+        NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
+        
+        if ([self.collectionView numberOfItemsInSection:0] == 1) {
+            //  If there's just an only item. Center it.
+            posX = _offset.horizontal + [self pageWidth] * indexPath.row;
+        }
+        
+        retVal = CGRectMake(posX,
+                            _offset.vertical,
+                            [self cardWidth],
+                            [self cardHeight]);
+    } else {
+        retVal = CGRectMake(_offset.horizontal,
+                            _offset.vertical / 2 + [self pageHeight] * indexPath.row,
+                            [self cardWidth],
+                            [self cardHeight]);
+    }
     
     return retVal;
 }
@@ -132,8 +152,16 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (CGSize)collectionViewContentSize {
-    CGSize retVal = CGSizeMake([self pageWidth] * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal,
-                               self.collectionView.bounds.size.height);
+    CGSize retVal = CGSizeZero;
+    
+    if (_layoutType == EBCardCollectionLayoutHorizontal) {
+        retVal = CGSizeMake([self pageWidth] * [self.collectionView numberOfItemsInSection:0] + _offset.horizontal,
+                            self.collectionView.bounds.size.height);
+    } else {
+        retVal = CGSizeMake(self.collectionView.bounds.size.width,
+                            [self pageHeight] * [self.collectionView numberOfItemsInSection:0] + _offset.vertical);
+    }
+    
     return retVal;
 }
 
@@ -141,38 +169,61 @@ static NSString * const CellKind = @"CardCell";
     
     CGPoint retVal = proposedContentOffset;
     
-    CGFloat rawPageValue = self.collectionView.contentOffset.x / [self pageWidth];
+    CGFloat rawPageValue = 0;
+    CGFloat velocityValue = 0;
+    
+    if (_layoutType == EBCardCollectionLayoutHorizontal) {
+        rawPageValue = self.collectionView.contentOffset.x / [self pageWidth];
+        velocityValue = velocity.x;
+    } else {
+        rawPageValue = self.collectionView.contentOffset.y / [self pageHeight];
+        velocityValue = velocity.y;
+    }
 
     CGFloat currentPage = 0;
-    if (velocity.x > 0.0) {
+    if (velocityValue > 0.0) {
         currentPage = floor(rawPageValue);
     } else {
         currentPage = ceil(rawPageValue);
     }
     
     CGFloat nextPage = 0;
-    if (velocity.x > 0.0) {
+    if (velocityValue > 0.0) {
         nextPage = ceil(rawPageValue);
     } else {
         nextPage = floor(rawPageValue);
     }
     
     BOOL pannedLessThanAPage = fabs(1 + currentPage - rawPageValue) > 0.5;
-    BOOL flicked = fabs(velocity.x) > [self flickVelocity];
+    BOOL flicked = fabs(velocityValue) > [self flickVelocity];
     if (pannedLessThanAPage && flicked) {
         
         //  Change UICollectionViewCell
-        retVal.x = nextPage * [self pageWidth];
-        
-        if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
-            retVal.x = retVal.x - _offset.horizontal/2;
+        if (_layoutType == EBCardCollectionLayoutHorizontal) {
+            retVal.x = nextPage * [self pageWidth];
+            
+            if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
+                retVal.x = retVal.x - _offset.horizontal/2;
+            }
+        } else {
+            retVal.y = nextPage * [self pageHeight];
+            
+            if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
+                retVal.y = retVal.y - _offset.vertical/2;
+            }
         }
         
     } else {
         //  Bounces
-        CGFloat posX = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
-        posX = MAX(0, posX);
-        retVal.x = posX;
+        if (_layoutType == EBCardCollectionLayoutHorizontal) {
+            CGFloat posX = round(rawPageValue) * [self pageWidth] - _offset.horizontal/2;
+            posX = MAX(0, posX);
+            retVal.x = posX;
+        } else {
+            CGFloat posY = round(rawPageValue) * [self pageHeight] - _offset.vertical/2;
+            posY = MAX(0, posY);
+            retVal.y = posY;
+        }
     }
     
     return retVal;

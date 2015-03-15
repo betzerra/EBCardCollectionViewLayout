@@ -40,8 +40,9 @@
     }
     
     //  The bigger the offset, the more you see on previous / next cards.
-    UIOffset anOffset = UIOffsetMake(40, 10);
+    UIOffset anOffset = UIOffsetMake(20, 20);
     [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
+    [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setLayoutType:EBCardCollectionLayoutVertical];
 }
 
 #pragma mark - UICollectionViewDataSource
