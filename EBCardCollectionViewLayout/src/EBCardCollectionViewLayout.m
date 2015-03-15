@@ -25,6 +25,7 @@
 static NSString * const CellKind = @"CardCell";
 
 - (void)setup {
+    self.collectionView.decelerationRate = 0.0f;
     [self addObserver:self forKeyPath:@"collectionView.contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -202,14 +203,15 @@ static NSString * const CellKind = @"CardCell";
         if (_layoutType == EBCardCollectionLayoutHorizontal) {
             retVal.x = nextPage * [self pageWidth];
             
-            if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
-                retVal.x = retVal.x - _offset.horizontal/2;
+            if (nextPage < [self.collectionView numberOfItemsInSection:0]) {
+                retVal.x = MAX(retVal.x - _offset.horizontal/2, 0);
             }
+            
         } else {
             retVal.y = nextPage * [self pageHeight];
             
-            if (nextPage != [self.collectionView numberOfItemsInSection:0]-1) {
-                retVal.y = retVal.y - _offset.vertical/2;
+            if (nextPage < [self.collectionView numberOfItemsInSection:0]) {
+                retVal.y = MAX(retVal.y - _offset.vertical/2, 0);
             }
         }
         
