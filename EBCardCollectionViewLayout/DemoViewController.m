@@ -55,6 +55,11 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    _collectionView.contentOffset = CGPointMake(0, 0);
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -76,6 +81,8 @@
     BOOL retVal = YES;
     return retVal;
 }
+
+#pragma mark - Actions
 
 - (IBAction)addFirstButtonPressed:(id)sender {
     //  Create data object
