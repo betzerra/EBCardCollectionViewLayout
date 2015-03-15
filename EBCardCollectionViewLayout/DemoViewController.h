@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EBCardCollectionViewLayout.h"
 
 @interface DemoViewController : UIViewController <UICollectionViewDataSource>{
     NSMutableArray *_people;
@@ -17,4 +18,7 @@
 - (IBAction)addLastButtonPressed:(id)sender;
 - (IBAction)removeFirstButtonPressed:(id)sender;
 - (IBAction)removeLastButtonPressed:(id)sender;
+
+@property (assign) EBCardCollectionLayoutType layoutType;
+
 @end

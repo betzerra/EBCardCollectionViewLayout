@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, EBCardCollectionLayoutType) {
+    EBCardCollectionLayoutHorizontal,
+    EBCardCollectionLayoutVertical
+};
+
 @interface EBCardCollectionViewLayout : UICollectionViewLayout
 
 @property (readonly) NSInteger currentPage;
 @property (nonatomic, assign) UIOffset offset;
 @property (nonatomic, strong) NSDictionary *layoutInfo;
+@property (assign) EBCardCollectionLayoutType layoutType;
 @end

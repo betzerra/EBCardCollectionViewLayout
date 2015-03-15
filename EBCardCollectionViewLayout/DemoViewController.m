@@ -7,7 +7,6 @@
 //
 
 #import "DemoViewController.h"
-#import "EBCardCollectionViewLayout.h"
 #import "DemoCollectionViewCell.h"
 
 @interface DemoViewController ()
@@ -40,8 +39,25 @@
     }
     
     //  The bigger the offset, the more you see on previous / next cards.
-    UIOffset anOffset = UIOffsetMake(40, 10);
-    [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
+    
+    
+    UIOffset anOffset = UIOffsetZero;
+    if (_layoutType == EBCardCollectionLayoutHorizontal) {
+        self.title = @"Horizontal Scrolling";
+        anOffset = UIOffsetMake(40, 10);
+        [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
+        [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setLayoutType:EBCardCollectionLayoutHorizontal];
+    } else {
+        self.title = @"Vertical Scrolling";
+        anOffset = UIOffsetMake(20, 20);
+        [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setOffset:anOffset];
+        [(EBCardCollectionViewLayout *)_collectionView.collectionViewLayout setLayoutType:EBCardCollectionLayoutVertical];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    _collectionView.contentOffset = CGPointMake(0, 0);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -65,6 +81,8 @@
     BOOL retVal = YES;
     return retVal;
 }
+
+#pragma mark - Actions
 
 - (IBAction)addFirstButtonPressed:(id)sender {
     //  Create data object
