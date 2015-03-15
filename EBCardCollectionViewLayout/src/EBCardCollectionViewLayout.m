@@ -37,7 +37,7 @@ static NSString * const CellKind = @"CardCell";
 }
 
 - (NSString *)keyForIndexPath:(NSIndexPath *)indexPath {
-    NSString *retVal = [NSString stringWithFormat:@"%d-%d", indexPath.section, indexPath.row];
+    NSString *retVal = [NSString stringWithFormat:@"%ld-%ld", indexPath.section, indexPath.row];
     return retVal;
 }
 
