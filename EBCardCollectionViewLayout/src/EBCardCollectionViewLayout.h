@@ -19,4 +19,7 @@ typedef NS_ENUM(NSUInteger, EBCardCollectionLayoutType) {
 @property (nonatomic, assign) UIOffset offset;
 @property (nonatomic, strong) NSDictionary *layoutInfo;
 @property (assign) EBCardCollectionLayoutType layoutType;
+
+- (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
+`
 @end
