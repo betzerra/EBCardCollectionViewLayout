@@ -10,7 +10,6 @@
 
 @interface EBCardCollectionViewLayout()
 - (NSString *)keyForIndexPath:(NSIndexPath *)indexPath;
-- (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath;
 
 - (NSInteger)cardWidth;
 - (NSInteger)cardHeight;
@@ -54,32 +53,6 @@ static NSString * const CellKind = @"CardCell";
     return retVal;
 }
 
-- (CGRect)frameForCardAtIndexPath:(NSIndexPath *)indexPath {
-
-    CGRect retVal = CGRectZero;
-    
-    if (_layoutType == EBCardCollectionLayoutHorizontal) {
-        NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
-        
-        if ([self.collectionView numberOfItemsInSection:0] == 1) {
-            //  If there's just an only item. Center it.
-            posX = _offset.horizontal + [self pageWidth] * indexPath.row;
-        }
-        
-        retVal = CGRectMake(posX,
-                            _offset.vertical,
-                            [self cardWidth],
-                            [self cardHeight]);
-    } else {
-        retVal = CGRectMake(_offset.horizontal,
-                            _offset.vertical / 2 + [self pageHeight] * indexPath.row,
-                            [self cardWidth],
-                            [self cardHeight]);
-    }
-    
-    return retVal;
-}
-
 #pragma mark - Properties
 
 - (void)setOffset:(UIOffset)offset {
@@ -116,7 +89,7 @@ static NSString * const CellKind = @"CardCell";
             
             UICollectionViewLayoutAttributes *itemAttributes =
             [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-            itemAttributes.frame = [self frameForCardAtIndexPath:indexPath];
+            itemAttributes.frame = [self contentFrameForCardAtIndexPath:indexPath];
             
             NSString *key = [self keyForIndexPath:indexPath];
             cellLayoutInfo[key] = itemAttributes;
@@ -233,6 +206,32 @@ static NSString * const CellKind = @"CardCell";
 
 - (CGFloat)flickVelocity {
     return 0.3;
+}
+
+- (CGRect)contentFrameForCardAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGRect retVal = CGRectZero;
+    
+    if (_layoutType == EBCardCollectionLayoutHorizontal) {
+        NSInteger posX = _offset.horizontal / 2 + [self pageWidth] * indexPath.row;
+        
+        if ([self.collectionView numberOfItemsInSection:0] == 1) {
+            //  If there's just an only item. Center it.
+            posX = _offset.horizontal + [self pageWidth] * indexPath.row;
+        }
+        
+        retVal = CGRectMake(posX,
+                            _offset.vertical,
+                            [self cardWidth],
+                            [self cardHeight]);
+    } else {
+        retVal = CGRectMake(_offset.horizontal,
+                            _offset.vertical / 2 + [self pageHeight] * indexPath.row,
+                            [self cardWidth],
+                            [self cardHeight]);
+    }
+    
+    return retVal;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
