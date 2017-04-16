@@ -24,7 +24,7 @@ UIOffset anOffset = UIOffsetMake(20, 0);
 ```
 
 
-##License
+## License
 This project is under MIT License. See LICENSE file for more information.
 
 Except photos for the demo project which are part of *#portraitwithtongue* by [Adrimontaldovera](http://instagram.com/adrimontaldovera) Those are not under MIT License.
