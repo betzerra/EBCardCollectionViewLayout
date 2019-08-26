@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EBCardCollectionViewLayout.h"
+@import EBCardCollectionViewLayout;
 
 @interface DemoViewController : UIViewController <UICollectionViewDataSource>{
     NSMutableArray *_people;
