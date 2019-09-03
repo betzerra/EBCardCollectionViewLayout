@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0429E3AB2314215900369966 /* EBCardCollectionViewLayout_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0429E3A92314215900369966 /* EBCardCollectionViewLayout_iOS.h */; };
+		0429E3AF231421D600369966 /* EBCardCollectionViewLayout.h in Sources */ = {isa = PBXBuildFile; fileRef = 67BE543519DF90A100AE1379 /* EBCardCollectionViewLayout.h */; };
+		0429E3B0231421D600369966 /* EBCardCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BE543619DF90A100AE1379 /* EBCardCollectionViewLayout.m */; };
+		042D260B231D81400010D81E /* EBCardCollectionViewLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0429E3A72314215900369966 /* EBCardCollectionViewLayout.framework */; };
+		042D260C231D81400010D81E /* EBCardCollectionViewLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0429E3A72314215900369966 /* EBCardCollectionViewLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		042D2610231D821A0010D81E /* EBCardCollectionViewLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 67BE543519DF90A100AE1379 /* EBCardCollectionViewLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777D03819DA0B1100DCE962 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D03719DA0B1100DCE962 /* main.m */; };
 		6777D03B19DA0B1100DCE962 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D03A19DA0B1100DCE962 /* AppDelegate.m */; };
 		6777D03E19DA0B1100DCE962 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D03D19DA0B1100DCE962 /* DemoViewController.m */; };
@@ -31,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		042D260D231D81400010D81E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6777D02A19DA0B1100DCE962 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0429E3A62314215900369966;
+			remoteInfo = "EBCardCollectionViewLayout-iOS";
+		};
 		6777D04C19DA0B1100DCE962 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6777D02A19DA0B1100DCE962 /* Project object */;
@@ -40,7 +53,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		042D260F231D81400010D81E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				042D260C231D81400010D81E /* EBCardCollectionViewLayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0429E3A72314215900369966 /* EBCardCollectionViewLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EBCardCollectionViewLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0429E3A92314215900369966 /* EBCardCollectionViewLayout_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBCardCollectionViewLayout_iOS.h; sourceTree = "<group>"; };
+		0429E3AA2314215900369966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6777D03219DA0B1100DCE962 /* EBCardCollectionViewLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBCardCollectionViewLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777D03619DA0B1100DCE962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6777D03719DA0B1100DCE962 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,10 +105,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0429E3A42314215900369966 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6777D02F19DA0B1100DCE962 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042D260B231D81400010D81E /* EBCardCollectionViewLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +130,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0429E3A82314215900369966 /* EBCardCollectionViewLayout-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0429E3A92314215900369966 /* EBCardCollectionViewLayout_iOS.h */,
+				0429E3AA2314215900369966 /* Info.plist */,
+			);
+			path = "EBCardCollectionViewLayout-iOS";
+			sourceTree = "<group>";
+		};
+		042D2609231D810E0010D81E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6777D02919DA0B1100DCE962 = {
 			isa = PBXGroup;
 			children = (
 				6777D03419DA0B1100DCE962 /* EBCardCollectionViewLayout */,
 				6777D04E19DA0B1100DCE962 /* EBCardCollectionViewLayoutTests */,
+				0429E3A82314215900369966 /* EBCardCollectionViewLayout-iOS */,
 				6777D03319DA0B1100DCE962 /* Products */,
+				042D2609231D810E0010D81E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +162,7 @@
 			children = (
 				6777D03219DA0B1100DCE962 /* EBCardCollectionViewLayout.app */,
 				6777D04B19DA0B1100DCE962 /* EBCardCollectionViewLayoutTests.xctest */,
+				0429E3A72314215900369966 /* EBCardCollectionViewLayout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,7 +244,37 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0429E3A22314215900369966 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042D2610231D821A0010D81E /* EBCardCollectionViewLayout.h in Headers */,
+				0429E3AB2314215900369966 /* EBCardCollectionViewLayout_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0429E3A62314215900369966 /* EBCardCollectionViewLayout-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0429E3AE2314215900369966 /* Build configuration list for PBXNativeTarget "EBCardCollectionViewLayout-iOS" */;
+			buildPhases = (
+				0429E3A22314215900369966 /* Headers */,
+				0429E3A32314215900369966 /* Sources */,
+				0429E3A42314215900369966 /* Frameworks */,
+				0429E3A52314215900369966 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EBCardCollectionViewLayout-iOS";
+			productName = "EBCardCollectionViewLayout-iOS";
+			productReference = 0429E3A72314215900369966 /* EBCardCollectionViewLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		6777D03119DA0B1100DCE962 /* EBCardCollectionViewLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6777D05519DA0B1100DCE962 /* Build configuration list for PBXNativeTarget "EBCardCollectionViewLayout" */;
@@ -195,10 +282,12 @@
 				6777D02E19DA0B1100DCE962 /* Sources */,
 				6777D02F19DA0B1100DCE962 /* Frameworks */,
 				6777D03019DA0B1100DCE962 /* Resources */,
+				042D260F231D81400010D81E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				042D260E231D81400010D81E /* PBXTargetDependency */,
 			);
 			name = EBCardCollectionViewLayout;
 			productName = EBCardCollectionViewLayout;
@@ -229,9 +318,13 @@
 		6777D02A19DA0B1100DCE962 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Ezequiel A Becerra";
 				TargetAttributes = {
+					0429E3A62314215900369966 = {
+						CreatedOnToolsVersion = 10.3;
+						ProvisioningStyle = Automatic;
+					};
 					6777D03119DA0B1100DCE962 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
@@ -243,7 +336,7 @@
 			};
 			buildConfigurationList = 6777D02D19DA0B1100DCE962 /* Build configuration list for PBXProject "EBCardCollectionViewLayout" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -256,11 +349,19 @@
 			targets = (
 				6777D03119DA0B1100DCE962 /* EBCardCollectionViewLayout */,
 				6777D04A19DA0B1100DCE962 /* EBCardCollectionViewLayoutTests */,
+				0429E3A62314215900369966 /* EBCardCollectionViewLayout-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0429E3A52314215900369966 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6777D03019DA0B1100DCE962 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +392,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0429E3A32314215900369966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0429E3AF231421D600369966 /* EBCardCollectionViewLayout.h in Sources */,
+				0429E3B0231421D600369966 /* EBCardCollectionViewLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6777D02E19DA0B1100DCE962 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -316,6 +426,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		042D260E231D81400010D81E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0429E3A62314215900369966 /* EBCardCollectionViewLayout-iOS */;
+			targetProxy = 042D260D231D81400010D81E /* PBXContainerItemProxy */;
+		};
 		6777D04D19DA0B1100DCE962 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6777D03119DA0B1100DCE962 /* EBCardCollectionViewLayout */;
@@ -343,28 +458,137 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0429E3AC2314215900369966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "EBCardCollectionViewLayout-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = EBCardCollectionViewLayout;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0429E3AD2314215900369966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "EBCardCollectionViewLayout-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = EBCardCollectionViewLayout;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		6777D05319DA0B1100DCE962 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -388,17 +612,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -406,6 +641,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -426,6 +662,7 @@
 				INFOPLIST_FILE = EBCardCollectionViewLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -437,6 +674,7 @@
 				INFOPLIST_FILE = EBCardCollectionViewLayout/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -455,6 +693,7 @@
 				);
 				INFOPLIST_FILE = EBCardCollectionViewLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EBCardCollectionViewLayout.app/EBCardCollectionViewLayout";
 			};
@@ -470,6 +709,7 @@
 				);
 				INFOPLIST_FILE = EBCardCollectionViewLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ar.com.betzerra.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EBCardCollectionViewLayout.app/EBCardCollectionViewLayout";
 			};
@@ -478,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0429E3AE2314215900369966 /* Build configuration list for PBXNativeTarget "EBCardCollectionViewLayout-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0429E3AC2314215900369966 /* Debug */,
+				0429E3AD2314215900369966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6777D02D19DA0B1100DCE962 /* Build configuration list for PBXProject "EBCardCollectionViewLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
